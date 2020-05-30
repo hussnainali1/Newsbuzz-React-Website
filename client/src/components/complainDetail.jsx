@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const apiEndpoint =
-  "http://localhost:9000/api/Event/updateStatus";
+  "http://localhost:9000/api/display/registerEvent/updateStatus";
 
 class ComplainDetail extends Component {
   state = {
@@ -34,13 +34,13 @@ class ComplainDetail extends Component {
     }
   }
   renderButton(complain) {
-    if (complain.status === "notvarified")
+    if (complain.status === "un-approved")
       return (
         <button
           className="btn btn-danger"
           onClick={() => this.handleStatus(complain)}
         >
-          Approve the event...
+          Update to Pending...
         </button>
       );
     else
@@ -49,14 +49,14 @@ class ComplainDetail extends Component {
           className="btn btn-cz"
           onClick={() => this.handleStatus(complain)}
         >
-          Dis-approve to approve!
+          Update to approve!
         </button>
       );
   }
 
   handleStatus = async complain => {
-    if (complain.status === "notvarified") {
-      console.log("inside when status is not varified");
+    if (complain.status === "un-approved") {
+      // console.log("inside update meethod");
       // console.log(complain._id);
       await axios
         .post(apiEndpoint, {
@@ -64,7 +64,7 @@ class ComplainDetail extends Component {
           status_update: "approved"
         })
         .then(res => {
-          console.log(res);
+          console.log("done fron react");
         });
 
       const { data } = await axios.get(
@@ -83,7 +83,7 @@ class ComplainDetail extends Component {
       await axios
         .post(apiEndpoint, {
           id_update: complain._id,
-          status_update: "notvarified"
+          status_update: "un-approved"
         })
         .then(res => {
           console.log("done fron react");
