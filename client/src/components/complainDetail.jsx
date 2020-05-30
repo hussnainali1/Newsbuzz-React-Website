@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const apiEndpoint =
-  "http://localhost:9000/api/display/registerEvent/updateStatus";
+  "http://localhost:9000/api/Event/updateStatus";
 
 class ComplainDetail extends Component {
   state = {
@@ -34,13 +34,13 @@ class ComplainDetail extends Component {
     }
   }
   renderButton(complain) {
-    if (complain.status === "un-approved")
+    if (complain.status === "notvarified")
       return (
         <button
           className="btn btn-danger"
           onClick={() => this.handleStatus(complain)}
         >
-          Update to Pending...
+          Approve the event...
         </button>
       );
     else
@@ -49,14 +49,14 @@ class ComplainDetail extends Component {
           className="btn btn-cz"
           onClick={() => this.handleStatus(complain)}
         >
-          Update to approve!
+          Dis-approve to approve!
         </button>
       );
   }
 
   handleStatus = async complain => {
-    if (complain.status === "un-approved") {
-      // console.log("inside update meethod");
+    if (complain.status === "notvarified") {
+      console.log("inside when status is not varified");
       // console.log(complain._id);
       await axios
         .post(apiEndpoint, {
@@ -64,7 +64,7 @@ class ComplainDetail extends Component {
           status_update: "approved"
         })
         .then(res => {
-          console.log("done fron react");
+          console.log(res);
         });
 
       const { data } = await axios.get(
@@ -83,7 +83,7 @@ class ComplainDetail extends Component {
       await axios
         .post(apiEndpoint, {
           id_update: complain._id,
-          status_update: "un-approved"
+          status_update: "notvarified"
         })
         .then(res => {
           console.log("done fron react");
@@ -116,7 +116,7 @@ class ComplainDetail extends Component {
           </Link>
           <div className="row">
             <div className="col-9">
-              <h3 style={{ color: "#159570" }}>{complain.tilte}</h3>
+              <h3 style={{ color: "#159570" }}>{complain.Event_name}</h3>
               <h6
                 style={{
                   color: "#2E2E2E"

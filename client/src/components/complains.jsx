@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import Pagination from "./common/pagination";
 import ListGroup from "./common/listGroup";
-const apiEndpoint = "http://localhost:9000/api/display/registerEvent";
+const apiEndpoint = "http://localhost:9000/api/display/react/registerEvent";
 
 class Complains extends Component {
   state = {
@@ -90,7 +90,7 @@ class Complains extends Component {
                     <th scope="row">{complains.indexOf(complain)}</th>
                     <td>
                       <Link to={`complaindetail/${complain._id}`}>
-                        {complain.tilte}
+                        {complain.Event_name}
                       </Link>
                     </td>
                     {/* <td></td> */}
