@@ -12,19 +12,19 @@ const Footer = () => {
         <div className="col-3">
           <h3>Quick Links</h3>
           <Link to="/billing" className="text-white">
-            <i className="fa fa-credit-card"></i> Billing
+            <i className="fa fa-credit-card"></i> News
           </Link>
           <br />
           <Link to="/forum" className="text-white">
-            <i className="fa fa-commenting"></i> Forum
+            <i className="fa fa-commenting"></i> Admission
           </Link>
           <br />
           <Link to="/fundraising" className="text-white">
-            <i className="fa fa-commenting"></i> Fundraising
+            <i className="fa fa-commenting"></i> Scholarships
           </Link>
           <br />
           <Link to="/complaint" className="text-white">
-            <i className="fa fa-exclamation-circle"></i> Complaint
+            <i className="fa fa-exclamation-circle"></i> Jobs
           </Link>
         </div>
         <div className="col-3">

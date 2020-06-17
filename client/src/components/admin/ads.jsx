@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 
-class Ads extends Component {
-	state = {};
-	render() {
-		return (
-			<div className="container">
-				<h1>Ads</h1>
-			</div>
-		);
-	}
-}
+// class Ads extends Component {
+// 	state = {};
+// 	render() {
+// 		return (
+// 			<div className="container">
+// 				<h1>Ads</h1>
+// 			</div>
+// 		);
+// 	}
+// }
 
-export default Ads;
+// export default Ads;

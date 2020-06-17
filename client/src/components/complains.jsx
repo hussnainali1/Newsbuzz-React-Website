@@ -6,29 +6,32 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import Pagination from "./common/pagination";
 import ListGroup from "./common/listGroup";
-const apiEndpoint = "http://localhost:9000/api/display/react/registerEvent";
+const apiEndpoint =
+  "http://newsbuzz-server.herokuapp.com/api/display/react/registerEvent";
 
 class Complains extends Component {
   state = {
     complains: [],
     status: [
       { _id: 0, name: "All" },
-      { _id: 1, name: "Resolved!" },
-      { _id: 2, name: "Pending..." }
+      // { _id: 1, name: "Resolved!" },
+      // { _id: 2, name: "Pending..." },
     ],
     pageSize: 5,
-    currentPage: 1
+    currentPage: 1,
   };
 
   async componentDidMount() {
     const { data: complains } = await axios.get(apiEndpoint);
     this.setState({ complains });
-    // console.log(complains);
+    console.log(complains);
   }
 
-  handleDelete = async complain => {
+  handleDelete = async (complain) => {
     const originalComplains = this.state.complains;
-    const complains = this.state.complains.filter(c => c._id !== complain._id);
+    const complains = this.state.complains.filter(
+      (c) => c._id !== complain._id
+    );
 
     this.setState({ complains });
 
@@ -41,11 +44,11 @@ class Complains extends Component {
     }
   };
 
-  handlePageChange = page => {
+  handlePageChange = (page) => {
     this.setState({ currentPage: page });
   };
 
-  handleStatusSelect = status => {
+  handleStatusSelect = (status) => {
     this.setState({ selectedStatus: status, currentPage: 1 });
     // console.log(this.state.selectedStatus);
   };
@@ -55,7 +58,9 @@ class Complains extends Component {
 
     const filtered =
       this.state.selectedStatus && this.state.selectedStatus._id
-        ? allComplains.filter(i => i.status === this.state.selectedStatus.name)
+        ? allComplains.filter(
+            (i) => i.status === this.state.selectedStatus.name
+          )
         : allComplains;
 
     const complains = paginate(filtered, currentPage, pageSize);
@@ -85,7 +90,7 @@ class Complains extends Component {
                 </tr>
               </thead>
               <tbody>
-                {complains.map(complain => (
+                {complains.map((complain) => (
                   <tr key={complain._id}>
                     <th scope="row">{complains.indexOf(complain)}</th>
                     <td>

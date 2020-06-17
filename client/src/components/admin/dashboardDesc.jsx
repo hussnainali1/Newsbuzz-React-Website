@@ -16,7 +16,7 @@ const DashboardDesc = () => {
       </p>
       <div className="row my-5">
         <div className="col-3">
-          <Card style={{ width: "17rem" }}>
+          {/* <Card style={{ width: "17rem" }}>
             <Link to="/dashboard/users">
               <Card.Img variant="top" src={userImg} />
             </Link>
@@ -31,7 +31,7 @@ const DashboardDesc = () => {
                 Manage now
               </Link>
             </Card.Body>
-          </Card>
+          </Card> */}
         </div>
         <div className="col-3">
           <Card style={{ width: "17rem" }}>

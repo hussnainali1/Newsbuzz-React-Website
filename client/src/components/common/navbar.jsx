@@ -8,7 +8,7 @@ const Navbar = ({ user }) => {
     // <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <nav className="navbar navbar-expand-lg navbar-cz sticky-top">
       <Link to="/" className="navbar-brand">
-        <img src={require("../../assets/img/logo-01.png")} alt="" />
+        <img src={require("../../assets/img/newsbuzz.png")} alt="" />
       </Link>
       <div className="collapse navbar-collapse">
         <div className="navbar-nav ml-auto">
@@ -47,17 +47,17 @@ const Navbar = ({ user }) => {
                 Logged in as:
                 {user.name}
               </NavItem>
-              <NavItem style={{ padding: "50px" }}>
+              <NavItem>
                 <NavLink
-                  className="nav-item nav-link ml-3 dropdown-nav-item"
+                  className="nav-item nav-link ml-3 dropdown-nav-item pt-5"
                   to="/dashboard"
                 >
                   Dashboard
                 </NavLink>
               </NavItem>
-              <NavItem style={{ padding: "50px" }}>
+              <NavItem>
                 <NavLink
-                  className="nav-item nav-link ml-3 dropdown-nav-item"
+                  className="nav-item nav-link ml-3 dropdown-nav-item pt-5"
                   to="/logout"
                 >
                   Logout
