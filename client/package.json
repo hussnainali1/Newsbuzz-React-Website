@@ -9,7 +9,7 @@
 		"@react-pdf/renderer": "^1.6.8",
 		"@stripe/react-stripe-js": "^1.0.3",
 		"@stripe/stripe-js": "^1.0.2",
-		"axios": "^0.19.2",
+		"axios": "^0.21.1",
 		"bootstrap": "^4.4.1",
 		"font-awesome": "^4.7.0",
 		"joi-browser": "^13.4.0",
